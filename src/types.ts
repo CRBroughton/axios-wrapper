@@ -1,8 +1,8 @@
 export interface IHttpClient {
-  get<T, U>(params: IHttpClientRequestParameters<U>): Promise<T>
+  get<T>(params: IHttpClientRequestParameters): Promise<T>
 }
 
-export interface IHttpClientRequestParameters<T> {
+export interface IHttpClientRequestParameters {
   url: string
-  payload?: T
+  // payload?: T
 }
