@@ -1,5 +1,5 @@
 import axios from 'axios'
-import type { IHttpClient, IHttpClientRequestParameters } from './types'
+import type { IHttpClient, IHttpClientRequestParameters, ResponseData } from './types'
 
 export class HttpClient implements IHttpClient {
   get<T>(params: IHttpClientRequestParameters): Promise<T> {
@@ -14,7 +14,7 @@ export class HttpClient implements IHttpClient {
 
 const httpClient = new HttpClient()
 
-const fetchItems = (): Promise<any[]> => {
+const fetchItems = (): Promise<ResponseData[]> => {
   const getParams: IHttpClientRequestParameters = {
     url: 'https://www.songsterr.com/a/ra/songs.json?pattern=Marley',
   }
