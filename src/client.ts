@@ -11,3 +11,16 @@ export class HttpClient implements IHttpClient {
     })
   }
 }
+
+const httpClient = new HttpClient()
+
+const fetchItems = (): Promise<any[]> => {
+  const getParams: IHttpClientRequestParameters = {
+    url: 'https://www.songsterr.com/a/ra/songs.json?pattern=Marley',
+  }
+
+  return httpClient.get(getParams)
+}
+
+// eslint-disable-next-line no-console
+console.log(fetchItems)
