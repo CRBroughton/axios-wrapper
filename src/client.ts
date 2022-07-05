@@ -23,4 +23,4 @@ const fetchItems = (): Promise<any[]> => {
 }
 
 // eslint-disable-next-line no-console
-console.log(fetchItems)
+console.log(fetchItems().then((items) => { console.log(items) }))
